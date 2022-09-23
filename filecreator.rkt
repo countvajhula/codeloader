@@ -67,16 +67,13 @@
   (for/list ([i n])
     (~a PREFIX i)))
 
-(flag (n num)
-  ("-n" "--number" "Number of files to create")
-  (n (string->number num)))
-
-(program (filecreator)
+(program (filecreator [n "number of files to create"])
+  (set! n (string->number n))
   (unless (directory-exists? BASE-PATH)
     (make-directory BASE-PATH))
-  (for-each create-individual (gen-names (n)))
-  (create-individual-main (n))
-  (create-combined (n))
-  (create-combined-main (n)))
+  (for-each create-individual (gen-names n))
+  (create-individual-main n)
+  (create-combined n)
+  (create-combined-main n))
 
 (run filecreator)
