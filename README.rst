@@ -3,8 +3,8 @@ Generate Code
 
 ::
 
-   ./filecreator.rkt 10
-   raco make output/*.rkt
+   $ ./filecreator.rkt 10
+   $ raco make output/*.rkt
 
 Time Loading of the Combined Module
 -----------------------------------
@@ -13,11 +13,11 @@ You will need the `require-latency <https://pkgd.racket-lang.org/pkgn/package/re
 
 ::
 
-   raco require-latency -f output/main-combined.rkt
+   $ raco require-latency -f output/main-combined.rkt
 
 Time Loading of the Separated Modules
 -------------------------------------
 
 ::
 
-   raco require-latency -f output/main-separate.rkt
+   $ raco require-latency -f output/main-separate.rkt
