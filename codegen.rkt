@@ -4,6 +4,8 @@
 
 (define-syntax-rule (bigfunction name)
   (define (name . args)
+    ;; we use displayln since, as a side effect, it won't be
+    ;; optimized away by the compiler.
     (displayln "hi")
     (displayln "hi")
     (displayln "hi")

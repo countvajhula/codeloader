@@ -21,9 +21,9 @@
            "\n"
            "(bigfunction " name ")\n")))))
 
-(define (create-individual-main n)
+(define (create-separated-main n)
   (with-output-to-file
-    (path-add-extension (build-path BASE-PATH "main-individual")
+    (path-add-extension (build-path BASE-PATH "main-separate")
                         ".rkt")
     (lambda ()
       (printf
@@ -72,7 +72,7 @@
   (unless (directory-exists? BASE-PATH)
     (make-directory BASE-PATH))
   (for-each create-individual (gen-names n))
-  (create-individual-main n)
+  (create-separated-main n)
   (create-combined n)
   (create-combined-main n))
 
